@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[project]
+name = "self-evloving-market-simulation"
+version = "0.1.0"
+description = "Market simulation framework with four-stage profiles and three-head Attention"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.24",
+    "torch>=2.2",
+    "openai>=1.0",
+    "python-dotenv>=1.0",
+    "sentence-transformers>=3.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff==0.17.4"]
+
+[project.scripts]
+sems-simulate = "sems.cli.simulate:main"
+sems-evaluate = "sems.cli.evaluate:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sems", "src/sems_attention", "src/sems_tools"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "tests"]
+addopts = "-p no:cacheprovider"
