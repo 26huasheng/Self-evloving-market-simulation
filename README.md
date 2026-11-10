@@ -24,6 +24,13 @@ Self-evloving-market-simulation/
 
 ## 安装和测试
 
+数据独立发布在 [TrackingSince 9 Cases Release](https://github.com/26huasheng/Self-evloving-market-simulation/releases/tag/data-trackingsince-9cases-20261110)：
+
+- [下载 9 个 Case 合集](https://github.com/26huasheng/Self-evloving-market-simulation/releases/download/data-trackingsince-9cases-20261110/sems_trackingSince_9cases_20261110.zip)
+- [数据清单 manifest.json](https://github.com/26huasheng/Self-evloving-market-simulation/releases/download/data-trackingsince-9cases-20261110/manifest.json)；[SHA-256 校验文件](https://github.com/26huasheng/Self-evloving-market-simulation/releases/download/data-trackingsince-9cases-20261110/SHA256SUMS.txt)
+
+解压外层合集后，将 `cases/` 中的单个 ZIP 作为 `--case` 输入。9 个 Case 均以各自焦点商品的 `trackingSince` 精确时间戳为 `t0`，原始 Case 内容保持不变。该数据包不包含画像缓存、模型权重或运行结果；使用 `real` 模式仍需另行准备这些输入。
+
 Python 3.11 及以上，在自己的 Python 环境中安装：
 
 ```powershell
